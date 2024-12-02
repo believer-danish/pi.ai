@@ -34,7 +34,7 @@ export const Sidebar = ({ setIsOpen, setWhichActive, whichActive }) => {
           id="profile"
           onClick={handleClick}
           className={`hover:bg-[rgba(237,_225,_209_,0.6)] flex justify-center items-center flex-col rounded-xl p-1 cursor-pointer  ${
-            whichActive === "profile" && "bg-[rgba(237,_225,_209_,1)]"
+            whichActive === "discover" && "bg-[rgba(237,_225,_209_,1)]"
           }`}
         >
           <ButtonComp

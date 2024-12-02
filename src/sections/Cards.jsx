@@ -2,7 +2,7 @@ import { useLocation } from "react-router";
 import messageImg from "../assets/message.svg";
 import { cardsData } from "../utils/data";
 import Card from "../components/Card";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import MyContext from "../utils/MyContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,7 @@ const Cards = () => {
   let skip = 2;
   const userName = useLocation().state.userName;
   const { fetchAnswer, setIsOpen } = useContext(MyContext);
-
+  const [prev, setPrev] = useState("");
   const handleClick = (e) => {
     e.stopPropagation();
     const id = e.currentTarget.id;
@@ -22,8 +22,10 @@ const Cards = () => {
       "The query is :" +
       id +
       " Find infomation about this query";
-
-    fetchAnswer(query, id);
+    if (prev != e.currentTarget.id) {
+      fetchAnswer(query, id);
+      setPrev(e.currentTarget.id);
+    }
   };
 
   const handleSidebar = () => {
@@ -50,7 +52,7 @@ const Cards = () => {
       <div
         className="flex gap-4 p-4 my-5 bg-[rgb(250_243_234)] rounded-2xl 
       shadow-[0px_12px_32px_-6px_#e4dbc8_,0px_2px_16px_-6px_#0000001a]
-       transition-all cursor-pointer hover:bg-[rgb(247_239_227)]"
+       transition-all cursor-pointer hover:bg-[rgb(247_239_227)] hover:scale-95"
       >
         <div className="w-14 h-14 ">
           <img src={messageImg} alt="vector image" className="w-full h-full" />
