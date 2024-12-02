@@ -32,7 +32,7 @@ const ChatSection = () => {
     div.current.scrollTop = div.current.scrollHeight;
   }, [chats]);
   return (
-    <section className=" flex justify-between    items-center  flex-col pb-8 gap-16   px-6    h-screen">
+    <section className=" flex justify-between    items-center  flex-col lg:pb-8 gap-16   px-6    h-screen">
       {/* Messages */}
       <section
         ref={div}
