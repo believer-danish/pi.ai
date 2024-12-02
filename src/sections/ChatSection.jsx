@@ -32,7 +32,7 @@ const ChatSection = () => {
     div.current.scrollTop = div.current.scrollHeight;
   }, [chats]);
   return (
-    <section className=" flex justify-between    items-center  flex-col pb-8 gap-16   px-4    h-screen">
+    <section className=" flex justify-between    items-center  flex-col pb-8 gap-16   px-6    h-screen">
       {/* Messages */}
       <section
         ref={div}
@@ -40,7 +40,7 @@ const ChatSection = () => {
       >
         <div
           className="flex  mx-auto  justify-center  items-center flex-col   
-          gap-12 w-full max-w-3xl  [font-family:alpina] text-[rgb(13_60_38)] text-2xl"
+          gap-12 w-full max-w-3xl  [font-family:alpina] text-[rgb(13_60_38)] lg:text-2xl text-xl"
         >
           {chats.map((chat, i) => (
             <div
@@ -57,7 +57,7 @@ const ChatSection = () => {
               >
                 {chat.question}
               </h1>
-              <div className="whitespace-pre-line text-[22px]  font-extralight">
+              <div className="whitespace-pre-line   font-extralight">
                 {chat.answers}
               </div>
             </div>

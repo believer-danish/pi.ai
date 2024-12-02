@@ -4,6 +4,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import ButtonComp from "./ButtonComp";
 
 export const Sidebar = ({ setIsOpen, setWhichActive, whichActive }) => {
+  console.log(whichActive);
   const handleClick = (e) => {
     setIsOpen((prev) => !prev);
     if (e.currentTarget.id === "discover") setWhichActive("discover");
@@ -19,7 +20,8 @@ export const Sidebar = ({ setIsOpen, setWhichActive, whichActive }) => {
         <div
           id="discover"
           onClick={handleClick}
-          className="hover:bg-[rgba(237,_225,_209_,0.6)] rounded-xl p-1  cursor-pointer"
+          className={`hover:bg-[rgba(237,_225,_209_,0.6)] rounded-xl p-1  cursor-pointer
+            ${whichActive === "discover" && "bg-[rgba(237,_225,_209_,1)]"}`}
         >
           <img
             src={discoverImg}
@@ -31,7 +33,9 @@ export const Sidebar = ({ setIsOpen, setWhichActive, whichActive }) => {
         <div
           id="profile"
           onClick={handleClick}
-          className="hover:bg-[rgba(237,_225,_209_,0.6)] flex justify-center items-center flex-col rounded-xl p-1 cursor-pointer "
+          className={`hover:bg-[rgba(237,_225,_209_,0.6)] flex justify-center items-center flex-col rounded-xl p-1 cursor-pointer  ${
+            whichActive === "profile" && "bg-[rgba(237,_225,_209_,1)]"
+          }`}
         >
           <ButtonComp
             img={<FontAwesomeIcon icon={faUser} />}
