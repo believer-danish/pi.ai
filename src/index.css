@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  scrollbar-width: none;
+}
+@layer base {
+  :root {
+    --grid-order: "1234";
+  }
+}
+
+@font-face {
+  font-family: alpina;
+  src: url("./assets/fonts/GT-Alpina/GT-Alpina-Condensed-Medium-Trial.otf");
+}
+
+.message {
+  animation: message-animation 1s ease 0.3s 1;
+}
+
+@keyframes message-animation {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
