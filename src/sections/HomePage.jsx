@@ -21,7 +21,7 @@ const HomePage = () => {
   };
   return (
     <section
-      className="h-screen w-full p-6 text-[rgb(13_60_38)]
+      className="h-[100svh] w-full p-6 text-[rgb(13_60_38)]
       bg-[hsl(34_62%_95%)] 
        flex items-center justify-start  flex-col pt-28 [font-family:alpina,serif] 
     "
